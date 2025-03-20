@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MariaLux - Бронювання готелів та ресторанів</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/dark.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/l10n/uk.js"></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <i class="fas fa-hotel"></i>
+                <span>MariaLux</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home"><i class="fas fa-home"></i> Головна</a></li>
+                <li><a href="#hotels"><i class="fas fa-hotel"></i> Готелі</a></li>
+                <li><a href="#restaurants"><i class="fas fa-utensils"></i> Ресторани</a></li>
+                <li><a href="#about"><i class="fas fa-info-circle"></i> Про нас</a></li>
+                <li><a href="#contacts"><i class="fas fa-envelope"></i> Контакти</a></li>
+            </ul>
+            <button id="theme-toggle" class="theme-toggle">
+                <i class="fas fa-sun"></i>
+            </button>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Розкішні Готелі та Ресторани</h1>
+                <p>Ексклюзивні готелі та вишукані ресторани для незабутнього відпочинку</p>
+                
+                <div class="search-container">
+                    <div class="search-row">
+                        <div class="search-field destination-field">
+                            <div class="field-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="field-content">
+                                <input type="text" placeholder="Куди ви хочете поїхати?">
+                            </div>
+                        </div>
+                        <div class="search-dates">
+                            <div class="search-field">
+                                <div class="field-icon">
+                                    <i class="fas fa-calendar"></i>
+                                </div>
+                                <div class="field-content">
+                                    <input type="text" id="check-in" placeholder="Дата заїзду">
+                                </div>
+                            </div>
+                            <div class="search-field">
+                                <div class="field-icon">
+                                    <i class="fas fa-calendar"></i>
+                                </div>
+                                <div class="field-content">
+                                    <input type="text" id="check-out" placeholder="Дата виїзду">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="search-field guests-field">
+                            <div class="field-icon">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="field-content">
+                                <input type="number" id="guests" placeholder="0" min="0" max="10" value="0">
+                            </div>
+                        </div>
+                        <button class="search-button">
+                            <i class="fas fa-search"></i>
+                            Знайти
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="hotels" class="featured-section">
+            <div class="section-header">
+                <h2>Преміум Готелі</h2>
+                <p>Оберіть свій ідеальний відпочинок серед найкращих готелів</p>
+            </div>
+            
+            <div class="cards-container">
+                <!-- Hotel Card 1 -->
+                <div class="card">
+                    <span class="top-sales-badge">Топ продажів</span>
+                    <img src="https://images.unsplash.com/photo-1455587734955-081b22074882?ixlib=rb-4.0.3" alt="Grand Hotel & Spa">
+                    <div class="card-content">
+                        <div class="card-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.9</span>
+                            <span class="reviews">(128 відгуків)</span>
+                        </div>
+                        <h3 class="card-title">Grand Hotel & Spa</h3>
+                        <div class="card-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Київ, Україна</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="card-tag"><i class="fas fa-wifi"></i> Безкоштовний Wi-Fi</span>
+                            <span class="card-tag"><i class="fas fa-parking"></i> Паркінг</span>
+                            <span class="card-tag"><i class="fas fa-spa"></i> Спа-центр</span>
+                        </div>
+                        <div class="card-price">
+                            <div class="price-info">
+                                <span class="price-label">Ціна за ніч від</span>
+                                <span class="price-amount">€200</span>
+                            </div>
+                            <button class="book-button">Забронювати</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hotel Card 2 -->
+                <div class="card">
+                    <span class="lux-badge">Люкс</span>
+                    <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3" alt="Royal Palace Resort">
+                    <div class="card-content">
+                        <div class="card-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.8</span>
+                            <span class="reviews">(96 відгуків)</span>
+                        </div>
+                        <h3 class="card-title">Royal Palace Resort</h3>
+                        <div class="card-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Одеса, Україна</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="card-tag"><i class="fas fa-swimming-pool"></i> Басейн</span>
+                            <span class="card-tag"><i class="fas fa-utensils"></i> Ресторан</span>
+                            <span class="card-tag"><i class="fas fa-dumbbell"></i> Фітнес</span>
+                        </div>
+                        <div class="card-price">
+                            <div class="price-info">
+                                <span class="price-label">Ціна за ніч від</span>
+                                <span class="price-amount">€180</span>
+                            </div>
+                            <button class="book-button">Забронювати</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hotel Card 3 -->
+                <div class="card">
+                    <span class="new-badge">Новинка</span>
+                    <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3" alt="Mountain View Resort">
+                    <div class="card-content">
+                        <div class="card-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.7</span>
+                            <span class="reviews">(64 відгуки)</span>
+                        </div>
+                        <h3 class="card-title">Mountain View Resort</h3>
+                        <div class="card-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Буковель, Україна</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="card-tag"><i class="fas fa-snowflake"></i> Лижний спорт</span>
+                            <span class="card-tag"><i class="fas fa-hot-tub"></i> Джакузі</span>
+                            <span class="card-tag"><i class="fas fa-mountain"></i> Краєвид</span>
+                        </div>
+                        <div class="card-price">
+                            <div class="price-info">
+                                <span class="price-label">Ціна за ніч від</span>
+                                <span class="price-amount">€150</span>
+                            </div>
+                            <button class="book-button">Забронювати</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="restaurants" class="featured-section">
+            <div class="section-header">
+                <h2>Вишукані Ресторани</h2>
+                <p>Відкрийте для себе неперевершені гастрономічні враження</p>
+            </div>
+            <div class="cards-container">
+                <div class="card restaurant-card">
+                    <span class="top-sales-badge">Топ продажів</span>
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3" alt="Le Grand Restaurant">
+                    <div class="card-content">
+                        <div class="card-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.9</span>
+                            <span class="reviews">(156 відгуків)</span>
+                        </div>
+                        <h3 class="card-title">Le Grand Restaurant</h3>
+                        <div class="card-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Київ, Україна</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="card-tag"><i class="fas fa-utensils"></i> Французька кухня</span>
+                            <span class="card-tag"><i class="fas fa-wine-glass-alt"></i> Винна карта</span>
+                            <span class="card-tag"><i class="fas fa-concierge-bell"></i> VIP-зал</span>
+                        </div>
+                        <div class="card-price">
+                            <div class="price-info">
+                                <span class="price-label">Середній чек</span>
+                                <span class="price-amount">€100</span>
+                            </div>
+                            <button class="book-button">Забронювати</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card restaurant-card">
+                    <span class="lux-badge">Мішелін</span>
+                    <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?ixlib=rb-4.0.3" alt="Verde Restaurant">
+                    <div class="card-content">
+                        <div class="card-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.8</span>
+                            <span class="reviews">(203 відгуки)</span>
+                        </div>
+                        <h3 class="card-title">Verde Restaurant</h3>
+                        <div class="card-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Львів, Україна</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="card-tag"><i class="fas fa-leaf"></i> Італійська кухня</span>
+                            <span class="card-tag"><i class="fas fa-pizza-slice"></i> Піца з дров'яної печі</span>
+                        </div>
+                        <div class="card-price">
+                            <div class="price-info">
+                                <span class="price-label">Середній чек</span>
+                                <span class="price-amount">€120</span>
+                            </div>
+                            <button class="book-button">Забронювати</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card restaurant-card">
+                    <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3" alt="Sakura Restaurant">
+                    <div class="card-content">
+                        <div class="card-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.7</span>
+                            <span class="reviews">(167 відгуків)</span>
+                        </div>
+                        <h3 class="card-title">Sakura Restaurant</h3>
+                        <div class="card-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Одеса, Україна</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="card-tag"><i class="fas fa-fish"></i> Японська кухня</span>
+                            <span class="card-tag"><i class="fas fa-cocktail"></i> Авторські коктейлі</span>
+                        </div>
+                        <div class="card-price">
+                            <div class="price-info">
+                                <span class="price-label">Середній чек</span>
+                                <span class="price-amount">€180</span>
+                            </div>
+                            <button class="book-button">Забронювати</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="about-content">
+                <div class="section-header">
+                    <h2>Про MariaLux</h2>
+                    <p>Ваш надійний партнер у світі преміум відпочинку</p>
+                </div>
+                <div class="about-grid">
+                    <div class="about-card">
+                        <i class="fas fa-medal"></i>
+                        <h3>Найкращі заклади</h3>
+                        <p>Ретельно відібрані готелі та ресторани найвищого класу</p>
+                    </div>
+                    <div class="about-card">
+                        <i class="fas fa-heart"></i>
+                        <h3>Персональний підхід</h3>
+                        <p>Індивідуальний сервіс та увага до кожного клієнта</p>
+                    </div>
+                    <div class="about-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Гарантія якості</h3>
+                        <p>100% гарантія якості обслуговування та повернення коштів</p>
+                    </div>
+                    <div class="about-card">
+                        <i class="fas fa-clock"></i>
+                        <h3>Цілодобова підтримка</h3>
+                        <p>Наша команда завжди готова допомогти вам 24/7</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Модальне вікно бронювання -->
+    <div id="booking-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Бронювання</h2>
+            <form id="booking-form">
+                <div class="form-group">
+                    <label for="name">Ваше ім'я</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Номер телефону</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="date">Дата</label>
+                    <input type="text" id="booking-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">Час</label>
+                    <input type="text" id="booking-time" required>
+                </div>
+                <div class="form-group">
+                    <label for="guests">Кількість гостей</label>
+                    <input type="number" id="booking-guests" min="1" max="10" value="2" required>
+                </div>
+                <div class="form-group">
+                    <label for="notes">Додаткові побажання</label>
+                    <textarea id="notes" rows="3"></textarea>
+                </div>
+                <button type="submit" class="submit-button">Підтвердити бронювання</button>
+            </form>
+        </div>
+    </div>
+
+    <footer id="contacts">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Контакти</h3>
+                <p><i class="fas fa-phone"></i> +380 (44) 123-45-67</p>
+                <p><i class="fas fa-envelope"></i> info@marialux.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> вул. Хрещатик 1, Київ, Україна</p>
+            </div>
+            <div class="footer-section">
+                <h3>Швидкі посилання</h3>
+                <ul>
+                    <li><a href="#hotels">Готелі</a></li>
+                    <li><a href="#restaurants">Ресторани</a></li>
+                    <li><a href="#about">Про нас</a></li>
+                    <li><a href="#contacts">Контакти</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Слідкуйте за нами</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Розсилка</h3>
+                <p>Підпишіться на наші новини та спеціальні пропозиції</p>
+                <div class="newsletter">
+                    <input type="email" placeholder="Ваш email">
+                    <button><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 MariaLux. Всі права захищені.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
